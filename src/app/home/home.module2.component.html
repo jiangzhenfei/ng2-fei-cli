@@ -1,0 +1,47 @@
+
+
+
+<div class="btn-group">
+    <button type="button" class="btn btn-primary" tooltip="tooltip">原始</button>
+    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+        <span class="caret"></span>
+        <span class="sr-only">切换下拉菜单</span>
+    </button>
+    <ul class="dropdown-menu" role="menu">
+        <li><a (click)="change()">功能</a></li>
+        <li><a (click)="delete()">删除</a></li>
+        <li><a >其他</a></li>
+        <li class="divider"></li>
+        <li><a (click)="getData()">获取modal的数据</a></li>
+    </ul>
+</div>
+
+<h3 myHighlight>测试directive</h3>
+<h3 myHighlight="yellow">测试directive</h3>
+
+<!-- 模态框测试 -->
+<button class="btn btn-primary" (click)="lgModal.show()">Large modal</button>
+<div bsModal #lgModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title pull-left">Large modal</h4>
+                <button type="button" class="close pull-right" (click)="lgModal.hide()" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group row">
+                    <label for="firstname" class="col-sm-2 control-label">名字</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" autocomplete="off" id="firstname" name="name" placeholder="请输入名字" [(ngModel)]='name'/>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </div>
+</div>
+
+<h1>我是chart</h1>
+
+<div id="my_pp" style="width:500px;height:500px"></div>

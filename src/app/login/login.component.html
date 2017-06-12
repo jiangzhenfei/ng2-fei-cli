@@ -1,0 +1,47 @@
+<style>
+  .container{
+    margin-top: 100px
+}
+</style>
+
+
+<div class="container">
+    <form class="form-horizontal" role="form" name="myForm" #forma="ngForm">
+        <div class="form-group">
+            <label for="firstname" class="col-sm-2 control-label">名字</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" autocomplete="off" id="firstname" name="name" placeholder="请输入名字" [(ngModel)]='name' #ipt1="ngModel" minlength="3" required='true' pattern="^[a-z]+$" maxlength="6" />
+                <form-help [target]='ipt1'></form-help>
+            </div>
+        </div>
+        <div class="form-group">
+          <label for="lastname" class="col-sm-2 control-label">姓</label>
+          <div class="col-sm-10">
+                <input type="text" class="form-control" autocomplete="off" id="lastname" name="psw" placeholder="请输入姓" [(ngModel)]='psw' #ipt2="ngModel" required='true' minlength="5"/>
+                <form-help [target]='ipt2'></form-help>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox">请记住我
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="button" class="btn btn-default" (click)="submit(forma)">登录</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<!-- form-help这个指令在SharedModule 里面，主要是用于输入错误的提示
+1.包含必填的提示
+2.包含最小长度的验证
+3.包含最大长度验证
+4.还有包含正则如何判断的验证
+-->
